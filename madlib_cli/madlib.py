@@ -20,7 +20,8 @@ def merge(bare_string,reg):
 if __name__=="__main__":
     print("Welcome To My Madlib Game")
     print("In this Game you will insert some word.")
-    string=read_template('assets/dark_and_stormy_night_template.txt')
+    # string=read_template('assets/dark_and_stormy_night_template.txt')
+    string=read_template('assets/madlib.txt')
     user_input=[]
     bare_string,word_list=parse_template(string)
     # print(word_list)
@@ -31,8 +32,9 @@ if __name__=="__main__":
 
     print(user_input)
     print(merge(bare_string,user_input))
-    merge(bare_string,user_input)
-
+    with open("assets/result.txt","w") as result:
+        result.write(merge(bare_string,user_input))
+    
 
 
 
